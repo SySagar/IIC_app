@@ -6,9 +6,11 @@
         <entry key="..\:/IIC/app/src/main/res/drawable/another_view.xml" value="0.177" />
         <entry key="..\:/IIC/app/src/main/res/layout/activity_main.xml" value="0.265625" />
         <entry key="..\:/IIC/app/src/main/res/layout/result.xml" value="0.265625" />
+        <entry key="..\:/IIC_android/app/src/main/res/layout/activity_main.xml" value="0.265625" />
+        <entry key="..\:/IIC_android/app/src/main/res/layout/another_view.xml" value="0.265625" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
