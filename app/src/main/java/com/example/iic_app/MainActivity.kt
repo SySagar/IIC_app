@@ -85,18 +85,11 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
         val per = findViewById<View>(R.id.editTextDate) as EditText
         val len = findViewById<View>(R.id.editTextDate2) as EditText
+        val per_in =findViewById<View>(R.id.editTextDate3) as EditText
         per.setText("0")
         len.setText("0")
-        length=(per.getText().toString()).toIntOrNull()
-        select_prop= spin.getSelectedItem().toString()
-        prop= (motor_percentage_spin.getSelectedItem().toString()).toIntOrNull()
-        coreType=core_spin.getSelectedItem().toString()
-        dm=(len.getText().toString()).toInt()
+        per_in.setText("0")
 
-
-
-        if(coreType=="round")
-        {dc=(len.getText().toString()).toInt()}
 
 
 
@@ -106,7 +99,14 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
         val button : Button=findViewById(R.id.res)
         button.setOnClickListener(View.OnClickListener(){
 
-            calculate_grains(view,length,select_prop,prop,coreType,dm)
+            length=(per.getText().toString()).toIntOrNull()
+            select_prop= spin.getSelectedItem().toString()
+            prop= (motor_percentage_spin.getSelectedItem().toString()).toIntOrNull()
+            coreType=core_spin.getSelectedItem().toString()
+            dm=(len.getText().toString()).toInt()
+            dc=(per_in.getText().toString()).toInt()
+
+            calculate_grains(view,length,select_prop,prop,coreType,dm,dc)
             popUp.contentView=view
             popUp.showAtLocation(view, 1,0,0)
             val close=view.findViewById<Button>(R.id.close)
@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
     override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-    fun calculate_grains(view: View,length : Int?,select_prop : String , prop : Int? , coreType : String , dm :Int)
+    fun calculate_grains(view: View,length : Int?,select_prop : String , prop : Int? , coreType : String , dm :Int,dc : Int)
     {
         var str=" "
         //val info_display :EditText
