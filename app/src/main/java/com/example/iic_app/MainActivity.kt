@@ -16,8 +16,6 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
     var prop_choice=0
     var select_prop =""
     var grain_length=0
-    var dc: Int=0
-
 
 
     var propellants = arrayOf<String?>("Potassium Nitrate(KN)- 70%  Sucrose(SU)-30%",
@@ -37,9 +35,11 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
         setContentView(R.layout.activity_main)
 
         var prop: Int?=0
-        var length : Int?=0
+        var length : Double? =0.0
         var coreType=""
-        var dm: Int=0
+        var dm: Double=0.0
+        var dc: Double=0.0
+
 
 
         val spin = findViewById<Spinner>(R.id.prop_spinner)
@@ -99,12 +99,12 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
         val button : Button=findViewById(R.id.res)
         button.setOnClickListener(View.OnClickListener(){
 
-            length=(per.getText().toString()).toIntOrNull()
+            length=(per.getText().toString()).toDoubleOrNull()
             select_prop= spin.getSelectedItem().toString()
             prop= (motor_percentage_spin.getSelectedItem().toString()).toIntOrNull()
             coreType=core_spin.getSelectedItem().toString()
-            dm=(len.getText().toString()).toInt()
-            dc=(per_in.getText().toString()).toInt()
+            dm=(len.getText().toString()).toDouble()
+            dc=(per_in.getText().toString()).toDouble()
 
             calculate_grains(view,length,select_prop,prop,coreType,dm,dc)
             popUp.contentView=view
@@ -128,12 +128,12 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
     override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-    fun calculate_grains(view: View,length : Int?,select_prop : String , prop : Int? , coreType : String , dm :Int,dc : Int)
+    fun calculate_grains(view: View,length : Double?,select_prop : String , prop : Int? , coreType : String , dm :Double,dc : Double)
     {
         var str=" "
         //val info_display :EditText
         var total_mass : Double =0.0
-        grain_length=(prop!! * length!!)/100 as Int
+        grain_length= ((prop!! * length!!)/100 as Int).toInt()
         var cn = (grain_length/6)-1 as Int
 
         str="TOTAL NUMBER OF GRAINS:"+(cn+2)+"\n"+cn+" GRAINS OF 6CM WITH CORE \n 1 GRAIN OF 3 CM WITHOUT CORE \n 1 GRAIN OF 3 CM WITH CORE"
