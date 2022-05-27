@@ -1,6 +1,7 @@
 package com.example.iic_app
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.*
@@ -12,14 +13,10 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
 
     var grain_no=0
-    var prop: Int?=0
-    var length : Int?=0
+    var prop_choice=0
     var select_prop =""
     var grain_length=0
-    var coreType=""
-    var dm: Int=0
     var dc: Int=0
-    var prop_choice=0
 
 
 
@@ -38,6 +35,11 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var prop: Int?=0
+        var length : Int?=0
+        var coreType=""
+        var dm: Int=0
 
 
         val spin = findViewById<Spinner>(R.id.prop_spinner)
@@ -91,6 +93,8 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
         coreType=core_spin.getSelectedItem().toString()
         dm=(len.getText().toString()).toInt()
 
+
+
         if(coreType=="round")
         {dc=(len.getText().toString()).toInt()}
 
@@ -102,7 +106,7 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
         val button : Button=findViewById(R.id.res)
         button.setOnClickListener(View.OnClickListener(){
 
-            calculate_grains(view)
+            calculate_grains(view,length,select_prop,prop,coreType,dm)
             popUp.contentView=view
             popUp.showAtLocation(view, 1,0,0)
             val close=view.findViewById<Button>(R.id.close)
@@ -124,7 +128,7 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
     override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-    fun calculate_grains(view: View)
+    fun calculate_grains(view: View,length : Int?,select_prop : String , prop : Int? , coreType : String , dm :Int)
     {
         var str=" "
         //val info_display :EditText
@@ -143,7 +147,7 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
                 else
                 if(prop_choice==1)
                 {total_mass=1.83*(cn*6*2.0189*0.25*dm*dm + 3.1415*3*0.25*dm*dm + 3*2.0189*0.25*dm*dm)
-                str+="\n\nTOTAL MASS OF PROPELLANT TO BE USED: "+total_mass+" rams\nPropellant Formulation: Potassium Nitrate(KN)- 65%  Sorbitol(SB)-10% Sucrose(SU)- 24% Carbon-1%\nMASS OF EACH GRAIN BEFORE CASTING:\n Of 6cm standard with core: "+1.83*(2.0189*6*0.25*dm*dm)+"grams\n Of 3cm standard without core: "+1.83*(3.1415*3*0.25*dm*dm)+"grams\n Of 3cm with core: "+1.83*(2.0189*3*0.25*dm*dm)+"grams\nMASS OF Potassium Nitrate(KN): "+0.65*total_mass+"grams\nMASS OF Sorbitol(SB):"+0.1*total_mass+"grams\nMASS OF Sucrose(SU): "+0.24*total_mass+"grams\nMASS OF Carbon: "+0.01*total_mass+"grams\nBURN RATE: 1.70-2.00 mm/sec\nTHRUST: 680-720 kN\nSPECIFIC IMPULSE: 160-165 sec"}
+                str+="\n\nTOTAL MASS OF PROPELLANT TO BE USED: "+total_mass+" grams\nPropellant Formulation: Potassium Nitrate(KN)- 65%  Sorbitol(SB)-10% Sucrose(SU)- 24% Carbon-1%\nMASS OF EACH GRAIN BEFORE CASTING:\n Of 6cm standard with core: "+1.83*(2.0189*6*0.25*dm*dm)+"grams\n Of 3cm standard without core: "+1.83*(3.1415*3*0.25*dm*dm)+"grams\n Of 3cm with core: "+1.83*(2.0189*3*0.25*dm*dm)+"grams\nMASS OF Potassium Nitrate(KN): "+0.65*total_mass+"grams\nMASS OF Sorbitol(SB):"+0.1*total_mass+"grams\nMASS OF Sucrose(SU): "+0.24*total_mass+"grams\nMASS OF Carbon: "+0.01*total_mass+"grams\nBURN RATE: 1.70-2.00 mm/sec\nTHRUST: 680-720 kN\nSPECIFIC IMPULSE: 160-165 sec"}
                 else if(prop_choice==2)
                 {total_mass=1.8*(cn*6*2.0189*0.25*dm*dm + 3.1415*3*0.25*dm*dm + 3*2.0189*0.25*dm*dm)
                 str+="\n\nTOTAL MASS OF PROPELLANT TO BE USED: "+total_mass+" grams\nPropellant Formulation: Potassium Nitrate(KN)- 65% Sucrose-35%\nMASS OF EACH GRAIN BEFORE CASTING:\n Of 6cm standard with core: "+1.8*(2.0189*6*0.25*dm*dm)+"grams\n Of 3cm standard without core: "+1.8*(3.1415*3*0.25*dm*dm)+"grams\n Of 3cm with core: "+1.8*(2.0189*3*0.25*dm*dm)+"grams\\nMASS OF Potassium Nitrate(KN):"+0.65*total_mass+"grams\nMASS OF Sucrose(SU): "+0.35*total_mass+"grams\nBURN RATE: 3.96-4.00 mm/sec\nTHRUST: 600-620 kN\nSPECIFIC IMPULSE: 150-155 sec"}
@@ -364,6 +368,11 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
         }
         val results=view.findViewById<TextView>(R.id.pop_message)
         results . setText(str)
+
+        Log.d("message",""+length)
+        Log.d("message",""+select_prop)
+        Log.d("message",""+coreType)
+        Log.d("message",""+dm)
 
     }
 }
