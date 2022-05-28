@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:textSize="20sp"
     android:gravity="left"
-    android:textColor="#4CAF50"
+    android:textColor="@color/input_color"
     android:padding="5dip"
+    android:textStyle="bold"
     />

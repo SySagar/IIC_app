@@ -5,8 +5,19 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:scaleType="centerCrop"
+        android:layout_width="421dp"
+        android:layout_height="742dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
 
     <TextView
         android:id="@+id/MotorLength"
@@ -80,10 +91,10 @@
         android:id="@+id/prop_percent"
         android:layout_width="91dp"
         android:layout_height="74dp"
-        android:foregroundTint="@android:color/holo_blue_bright"
+        android:foregroundTint="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.881"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.634"
@@ -91,12 +102,12 @@
 
     <Spinner
         android:id="@+id/core_select"
-        android:layout_width="151dp"
-        android:layout_height="87dp"
+        android:layout_width="128dp"
+        android:layout_height="83dp"
         android:foregroundTint="@android:color/holo_blue_bright"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.484"
@@ -125,6 +136,7 @@
         android:ems="10"
         android:inputType="date"
         android:textColor="@color/input_color"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.879"
@@ -140,6 +152,7 @@
         android:ems="10"
         android:inputType="date"
         android:textColor="@color/input_color"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.879"
@@ -168,18 +181,19 @@
         android:ems="10"
         android:inputType="date"
         android:textColor="@color/input_color"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintHorizontal_bias="0.883"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327"
+        app:layout_constraintVertical_bias="0.333"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/res"
-        android:layout_width="110dp"
-        android:layout_height="101dp"
+        android:layout_width="102dp"
+        android:layout_height="92dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
@@ -187,5 +201,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/result_output" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
