@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
     var core_type = arrayOf<String?>("round","star")
 
-    var percentage = arrayOf<String?>("70","75","80","other")
+    var percentage = arrayOf<String?>("70","75","80")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
         val ad: ArrayAdapter<*> = ArrayAdapter<Any?>(
             this,
-            android.R.layout.simple_spinner_item,
+            R.layout.spinner_design,
             propellants)
 
         ad.setDropDownViewResource(
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
         val cd: ArrayAdapter<*> = ArrayAdapter<Any?>(
             this,
-            android.R.layout.simple_spinner_item,
+            R.layout.spinner_design,
             core_type)
 
         cd.setDropDownViewResource(
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
         val ab: ArrayAdapter<*> = ArrayAdapter<Any?>(
             this,
-            android.R.layout.simple_spinner_item,
+            R.layout.spinner_design,
             percentage)
 
         ab.setDropDownViewResource(
@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
         //generating the output
         val popUp=PopupWindow(this)
         val view=layoutInflater.inflate(R.layout.another_view,null)
-        val button : Button=findViewById(R.id.res)
+        val button : ImageView=findViewById(R.id.res)
         button.setOnClickListener(View.OnClickListener(){
 
             length=(per.getText().toString()).toDoubleOrNull()

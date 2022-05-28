@@ -5,13 +5,16 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/MotorLength"
         android:layout_width="185dp"
         android:layout_height="44dp"
+        android:fontFamily="@font/abril_fatface"
         android:text="@string/length"
+        android:textColor="@color/design_default_color_secondary"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextDate"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +25,9 @@
         android:id="@+id/propellent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/abril_fatface"
         android:text="Select a propelant\n percentage :"
+        android:textColor="@color/teal_200"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +40,9 @@
         android:id="@+id/core"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/abril_fatface"
         android:text="@string/core"
+        android:textColor="@color/teal_200"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +55,9 @@
         android:id="@+id/diameter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/abril_fatface"
         android:text="Enter external diameter :"
+        android:textColor="@color/teal_200"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextDate2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,18 +80,20 @@
         android:id="@+id/prop_percent"
         android:layout_width="91dp"
         android:layout_height="74dp"
+        android:foregroundTint="@android:color/holo_blue_bright"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintHorizontal_bias="0.793"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654"
+        app:layout_constraintVertical_bias="0.634"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Spinner
         android:id="@+id/core_select"
         android:layout_width="181dp"
         android:layout_height="85dp"
+        android:foregroundTint="@android:color/holo_blue_bright"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.969"
@@ -95,7 +106,9 @@
         android:id="@+id/textView3"
         android:layout_width="243dp"
         android:layout_height="43dp"
+        android:fontFamily="@font/abril_fatface"
         android:text="Select a propellent :"
+        android:textColor="@color/teal_200"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,12 +123,14 @@
         android:layout_height="90dp"
         android:ems="10"
         android:inputType="date"
+        android:textColor="@color/input_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.01"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextDate2"
@@ -123,6 +138,7 @@
         android:layout_height="90dp"
         android:ems="10"
         android:inputType="date"
+        android:textColor="@color/input_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.949"
@@ -131,23 +147,14 @@
         app:layout_constraintVertical_bias="0.17"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/res"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="results"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/abril_fatface"
         android:text="Enter internal diameter :"
+        android:textColor="@color/teal_200"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextDate3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -160,6 +167,7 @@
         android:layout_height="86dp"
         android:ems="10"
         android:inputType="date"
+        android:textColor="@color/input_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.977"
@@ -167,5 +175,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.322"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/res"
+        android:layout_width="110dp"
+        android:layout_height="101dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/result_output" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
